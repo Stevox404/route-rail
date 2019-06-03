@@ -12,53 +12,16 @@ const dir = {
 	SW= Vector2(-1, 1),
 }
 
-#static func get_track_dir(track_name: String, curr_dir: Vector2) -> Vector2:
-#	var new_dir: Vector2
-#	match track_name:
-#		"TracksStraightV":
-#			if curr_dir.y != 0:
-#				new_dir = Vector2(0, curr_dir.y) # N | S
-#			else:
-#				new_dir = dir.NORTH
-#		"TracksStraightH":
-#			if curr_dir.x != 0:
-#				new_dir = Vector2(curr_dir.x, 0) # E | W
-#			else:
-#				new_dir = dir.EAST
-#		"TracksCurvedSE":
-#			if curr_dir.x == -1:
-#				new_dir = Vector2(-1, 1) # SW
-#			elif curr_dir.y == -1:
-#				new_dir = Vector2(1, -1) # NE
-#			if curr_dir == new_dir:
-#				new_dir = Vector2(max(curr_dir.x, 0), max(curr_dir.y, 0))
-#		"TracksCurvedSW":
-#			new_dir = Vector2(0,1)
-##			if curr_dir.x == 1:
-##				new_dir = Vector2(1, 1) # SE
-##			elif curr_dir.y == -1:
-##				new_dir = Vector2(-1, -1) # NW
-##			if curr_dir == new_dir:
-##				new_dir = Vector2(min(curr_dir.x, 0), max(curr_dir.y, 0))
-#		"TracksCurvedNE":
-#			if curr_dir.x == -1:
-#				new_dir = Vector2(-1, -1) # NW
-#			elif curr_dir.y == 1:
-#				new_dir = Vector2(1, 1) # SE
-#			if curr_dir == new_dir:
-#				new_dir = Vector2(max(curr_dir.x, 0), min(curr_dir.y, 0))
-#		"TracksCurvedNW":
-#			if curr_dir.x == 1:
-#				new_dir = Vector2(1, -1) # NE
-#			elif curr_dir.y == 1:
-#				new_dir = Vector2(-1, 1) # SW
-#			if curr_dir == new_dir:
-#				new_dir = Vector2(min(curr_dir.x, 0), min(curr_dir.y, 0))
-#		_: new_dir =  dir.EAST
-#
-##	print("Track: ",track_name, ". curr_dir: ",curr_dir, ". new_dir: ",new_dir)
-#	return new_dir
+static func get_game_node(scene_tree: SceneTree):
+	#Use the get_tree() method
+	var root = scene_tree.get_root()
+	for child in root.get_children():
+		if child.name == "Game":
+			return child
+	GDError.new("Root Game node not found!")
 
+static func quit_game():
+	Engine.get_main_loop().quit()
 
 static func get_track_dir(track_name: String, curr_dir: Vector2) -> Vector2:
 	var new_dir: Vector2
@@ -66,12 +29,12 @@ static func get_track_dir(track_name: String, curr_dir: Vector2) -> Vector2:
 		"TracksStraightV":
 			if curr_dir.y == 1: #Going S
 				new_dir = dir.S
-			else:
+			elif curr_dir.y == -1:
 				new_dir = dir.N
 		"TracksStraightH":
 			if curr_dir.x == 1: #Going E
 				new_dir = dir.E
-			else:
+			elif curr_dir.x == -1:
 				new_dir = dir.W
 		"TracksCurvedSE":
 			if curr_dir.y == -1: #Going N
@@ -93,7 +56,8 @@ static func get_track_dir(track_name: String, curr_dir: Vector2) -> Vector2:
 				new_dir = dir.N
 			elif curr_dir.y == 1: #Going S
 				new_dir = dir.W
-		_: new_dir =  dir.E
+#		_: new_dir =  dir.E
+		_: new_dir =  Vector2()
 		
 #	print("Track: ",track_name, ". curr_dir: ",curr_dir, ". new_dir: ",new_dir)
 	return new_dir

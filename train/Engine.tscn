@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/images/Train.png" type="Texture" id=1]
 [ext_resource path="res://train/MotorUnit.gd" type="Script" id=2]
@@ -6,9 +6,53 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.6247, 26.5468 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "move"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.558824, 1 )
+colors = PoolColorArray( 0.0195313, 0.017221, 0.0117493, 1, 0.960938, 0.924988, 0.803284, 1, 1, 0.934509, 0.710938, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+max_value = 2.0
+_data = [ Vector2( 0, 0.0985 ), 0.0, 9.98577, 0, 0, Vector2( 0.994308, 1.9218 ), 10.8192, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+flag_disable_z = true
+gravity = Vector3( 10, 10, 0 )
+initial_velocity = 15.0
+angular_velocity = 14.6953
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -5.0
+scale = 10.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
 [node name="Engine" type="Sprite"]
 texture = ExtResource( 1 )
 hframes = 2
+frame = 1
 region_enabled = true
 region_rect = Rect2( 40, 0, 87, 58 )
 script = ExtResource( 2 )
@@ -21,4 +65,16 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea2D"]
 position = Vector2( 0.832165, 2.14582 )
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/move = SubResource( 2 )
+
+[node name="Smoke" type="Particles2D" parent="."]
+position = Vector2( 0, -11.373 )
+amount = 11
+speed_scale = 2.0
+explosiveness = 0.5
+local_coords = false
+process_material = SubResource( 7 )
 

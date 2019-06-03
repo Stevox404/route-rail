@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Trains"
-run/main_scene="res://TestLevel.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -41,6 +41,7 @@ window/stretch/aspect="keep"
 2d_physics/layer_2="train"
 2d_physics/layer_3="engine"
 2d_physics/layer_4="switch"
+2d_physics/layer_5="goal"
 
 [rendering]
 

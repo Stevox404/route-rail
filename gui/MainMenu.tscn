@@ -120,15 +120,17 @@ stretch_mode = 5
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 10.0
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="StartBtn" to="." method="_on_Btn_focus_entered"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_Btn_focus_entered"]
+[connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
 [connection signal="mouse_entered" from="CloseBtn" to="." method="_on_Btn_focus_entered"]
 [connection signal="pressed" from="CloseBtn" to="." method="_on_Btn_focus_entered"]
+[connection signal="pressed" from="CloseBtn" to="." method="_on_CloseBtn_pressed"]
 [connection signal="finished" from="HoverSound" to="." method="_on_HoverSound_finished"]

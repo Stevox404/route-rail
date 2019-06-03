@@ -1,3 +1,6 @@
 extends Node
 
-onready var locomotive = $TileMap/Locomotive
+
+func handle_level_completion():
+	#handle level completion
+	pass
