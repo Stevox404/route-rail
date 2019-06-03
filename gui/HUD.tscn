@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://gui/HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/GUI atlas.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/GUI-Hover atlas.png" type="Texture" id=3]
+[ext_resource path="res://assets/audio/sounds/rollover_in.wav" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 1680, 816, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1488, 392, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1496, 400, 176, 176 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 1928, 800, 296, 224 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1752, 440, 304, 232 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1760, 448, 288, 216 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="FFBtn" type="TextureButton" parent="."]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 89.0
+margin_bottom = 80.0
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="PauseBtn" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -490.0
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="mouse_entered" from="FFBtn" to="." method="_on_Btn_focus_entered"]
+[connection signal="pressed" from="FFBtn" to="." method="_on_Btn_focus_entered"]
+[connection signal="mouse_entered" from="PauseBtn" to="." method="_on_Btn_focus_entered"]
+[connection signal="pressed" from="PauseBtn" to="." method="_on_Btn_focus_entered"]

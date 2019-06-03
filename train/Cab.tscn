@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/images/Train.png" type="Texture" id=1]
 [ext_resource path="res://train/MotorUnit.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.614, 23.9807 )
 
 [node name="Cab" type="Sprite"]
 texture = ExtResource( 1 )
@@ -9,4 +12,13 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2( 40, 71, 87, 51 )
 script = ExtResource( 2 )
+
+[node name="SwitchArea2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea2D"]
+position = Vector2( 0.250343, 1.50069 )
+shape = SubResource( 1 )
 
