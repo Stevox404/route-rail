@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.614, 23.9807 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "base"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
@@ -21,11 +21,10 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "crashed"
 
-[sub_resource type="Animation" id=2]
-resource_name = "move"
+[sub_resource type="Animation" id=4]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -60,7 +59,7 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/base = SubResource( 3 )
-anims/crashed = SubResource( 4 )
-anims/move = SubResource( 2 )
+anims/base = SubResource( 2 )
+anims/crashed = SubResource( 3 )
+anims/move = SubResource( 4 )
 

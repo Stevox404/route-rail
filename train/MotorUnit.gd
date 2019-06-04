@@ -11,6 +11,7 @@ var next_pos: Vector2
 var switch
 
 func _ready():
+	get_parent().connect("speed_changed", self, "change_speed")
 	map = get_parent().map
 	dir = get_parent().dir
 	rot_offset = rotation_degrees
@@ -55,6 +56,14 @@ func stop_moving(reason: int):
 			rotate(deg2rad(val))
 		else:
 			rotate(deg2rad(-val))
+
+func change_speed(increase: bool):
+	print("SPPPPPPPD")
+	if increase:
+		timer.wait_time = .2
+	else:
+		timer.wait_time = .4
+	pass
 
 func _physics_process(delta):
 	if global_position != next_pos:

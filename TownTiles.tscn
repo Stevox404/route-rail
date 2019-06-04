@@ -1,0 +1,222 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/images/terrainTiles_default.png" type="Texture" id=1]
+
+[node name="TownTiles" type="Node"]
+
+[node name="RoadStraightV" type="Sprite" parent="."]
+position = Vector2( 130, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+
+[node name="RoadStraightH" type="Sprite" parent="."]
+position = Vector2( 228, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+
+[node name="RoadStraightVX" type="Sprite" parent="."]
+position = Vector2( 330, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 64 )
+
+[node name="RoadStraightVX2" type="Sprite" parent="."]
+position = Vector2( 430, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+
+[node name="RoadStraightHX" type="Sprite" parent="."]
+position = Vector2( 130, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 64, 64 )
+
+[node name="RoadStraightHX2" type="Sprite" parent="."]
+position = Vector2( 230, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 0, 64, 64 )
+
+[node name="RoadStraightX" type="Sprite" parent="."]
+position = Vector2( 520, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+
+[node name="RoadCurvedNE" type="Sprite" parent="."]
+position = Vector2( 330, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="RoadCurvedNW" type="Sprite" parent="."]
+position = Vector2( 430, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 64, 64, 64 )
+
+[node name="RoadCurvedSW" type="Sprite" parent="."]
+position = Vector2( 610, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 64, 64, 64 )
+
+[node name="RoadCurvedSE" type="Sprite" parent="."]
+position = Vector2( 520, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 64, 64, 64 )
+
+[node name="RoadCurvedX" type="Sprite" parent="."]
+position = Vector2( 610, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 700, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="Dirt" type="Sprite" parent="."]
+position = Vector2( 800, 180 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 128, 64, 64 )
+
+[node name="Dirt2" type="Sprite" parent="."]
+position = Vector2( 800, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 192, 64, 64 )
+
+[node name="Grass2" type="Sprite" parent="."]
+position = Vector2( 800, 80 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+
+[node name="GrassDirtH" type="Sprite" parent="."]
+position = Vector2( 130, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 448, 0, 64, 64 )
+
+[node name="GrassDirtH2" type="Sprite" parent="."]
+position = Vector2( 230, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 0, 64, 64 )
+
+[node name="GrassDirtV" type="Sprite" parent="."]
+position = Vector2( 330, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 448, 64, 64, 64 )
+
+[node name="GrassDirtV2" type="Sprite" parent="."]
+position = Vector2( 430, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 64, 64, 64 )
+
+[node name="GrassDirtRoadH" type="Sprite" parent="."]
+position = Vector2( 530, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 0, 64, 64 )
+
+[node name="GrassDirtRoadH2" type="Sprite" parent="."]
+position = Vector2( 620, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 448, 128, 64, 64 )
+
+[node name="GrassDirtRoadV" type="Sprite" parent="."]
+position = Vector2( 710, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 64, 64, 64 )
+
+[node name="GrassDirtRoadV2" type="Sprite" parent="."]
+position = Vector2( 710, 170 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 448, 192, 64, 64 )
+
+[node name="DirtRoadStraightV" type="Sprite" parent="."]
+position = Vector2( 132, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+
+[node name="DirtRoadStraightH" type="Sprite" parent="."]
+position = Vector2( 230, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 128, 64, 64 )
+
+[node name="DirtRoadStraightVX" type="Sprite" parent="."]
+position = Vector2( 332, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+
+[node name="DirtRoadStraightVX2" type="Sprite" parent="."]
+position = Vector2( 432, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 128, 64, 64 )
+
+[node name="DirtRoadStraightHX" type="Sprite" parent="."]
+position = Vector2( 132, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 128, 64, 64 )
+
+[node name="DirtRoadStraightHX2" type="Sprite" parent="."]
+position = Vector2( 232, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 128, 64, 64 )
+
+[node name="DirtRoadStraightX" type="Sprite" parent="."]
+position = Vector2( 522, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 128, 64, 64 )
+
+[node name="DirtRoadCurvedNE" type="Sprite" parent="."]
+position = Vector2( 332, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 128, 64, 64 )
+
+[node name="DirtRoadCurvedNW" type="Sprite" parent="."]
+position = Vector2( 432, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 128, 64, 64 )
+
+[node name="DirtRoadCurvedSW" type="Sprite" parent="."]
+position = Vector2( 612, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 128, 64, 64 )
+
+[node name="DirtRoadCurvedSE" type="Sprite" parent="."]
+position = Vector2( 522, 342 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+
+[node name="DirtRoadCurvedX" type="Sprite" parent="."]
+position = Vector2( 612, 432 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+

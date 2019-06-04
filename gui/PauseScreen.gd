@@ -7,7 +7,11 @@ func _on_Btn_focus_entered():
 	hover_sound.play()
 
 func _on_ResumeBtn_pressed():
-	global.get_game_node(get_tree()).resume_game()
+	var root = global.get_game_node(get_tree())
+	if root:
+		root.resume_game()
 
 func _on_MainBtn_pressed():
-	global.get_game_node(get_tree()).go_to_main_menu()
+	var root = global.get_game_node(get_tree())
+	if root:
+		root.go_to_main_menu()
